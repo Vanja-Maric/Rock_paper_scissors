@@ -17,3 +17,9 @@ test('shouldAllowPlayerToSetChoiceRock', () => {
   player.setChoice('rock');
   expect(player.choice).toBe('rock');
 });
+
+test('shouldAllowPlayerToSetChoicePaper', () => {
+  const player = new Player('Daniel');
+  player.setChoice('paper');
+  expect(player.choice).toBe('paper');
+});
