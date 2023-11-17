@@ -1,7 +1,7 @@
 export class Choices {
 
   constructor() {
-    this.availableChoices = ["rock", "paper", ""];
+    this.availableChoices = ["rock", "paper", "scissors"];
   }
 
 }
