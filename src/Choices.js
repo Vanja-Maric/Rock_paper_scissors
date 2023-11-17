@@ -5,35 +5,20 @@ export class Choices {
   }
 
   determineWinner(firstOption, secondOption) {
-    if (firstOption === "rock" || secondOption === "rock") {
-      if (firstOption === "scissors" || secondOption === "scissors") {
-        return "rock";
-      }
-    }
-    if (firstOption === "paper" || secondOption === "paper") {
-      if (firstOption === "rock" || secondOption === "rock") {
-        return "paper";
-      }
-    }
 
-    if (firstOption === "scissors" || secondOption === "scissors") {
-      if (firstOption === "paper" || secondOption === "paper") {
-        return "scissors";
-      }
-    }
-
-    if (firstOption === "rock" && secondOption === "rock") {
+    if (firstOption === secondOption) {
       return "tie";
     }
-
-    if (firstOption === "paper" && secondOption === "paper") {
-      return "tie";
-    }
-
-    if (firstOption === "scissors" && secondOption === "scissors") {
-      return "tie";
+    const winningMap = {
+      rock: 'scissors',
+      paper: 'rock',
+      scissors: 'paper'
+    };
+    if (winningMap[firstOption] === secondOption) {
+      return firstOption;
+    } else if (winningMap[secondOption] === firstOption) {
+      return secondOption;
     }
   }
-
 
 }
