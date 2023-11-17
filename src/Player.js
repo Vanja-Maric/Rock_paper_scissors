@@ -5,8 +5,8 @@ export class Player {
     this.choice = null;
   }
 
-  setChoice(rock) {
-    this.choice = "rock";
+  setChoice(choice) {
+    this.choice = choice;
   }
 
 }
