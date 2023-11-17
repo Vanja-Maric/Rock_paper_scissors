@@ -65,6 +65,15 @@ describe('Ui class', () => {
     });
   })
 
+  test('presentWinner announces the correct winner', () => {
+    const winnerName = "Daniel";
+    console.log = jest.fn();
+
+    ui.presentWinner(winnerName);
+
+    expect(console.log).toHaveBeenCalledWith("Daniel wins!");
+  });
+
 
 });
 
