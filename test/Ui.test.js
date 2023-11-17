@@ -49,5 +49,9 @@ describe('Ui class', () => {
     await expect(ui.greetingMessage()).rejects.toThrow('Username cannot be empty.');
   });
 
+  test('throwErrorIfWrongChoice should throw exception for wrong choice', () => {
+    expect(() => ui.throwErrorIfWrongChoice("t")).toThrow('Wrong choice. Please choose again.');
+  });
+
 });
 
