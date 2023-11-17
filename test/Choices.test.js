@@ -24,7 +24,12 @@ describe("Choices", () => {
     expect(choices.determineWinner("paper", "rock")).toBe("paper");
   });
 
-  test("should return 'paper' if paper vs rock", () => {
+  test("should return 'paper' if rock vs paper", () => {
     const choices = new Choices();
     expect(choices.determineWinner("rock", "paper")).toBe("paper");
+  });
+
+  test("should return 'scissors' if scissors vs paper", () => {
+    const choices = new Choices();
+    expect(choices.determineWinner("scissors", "paper")).toBe("scissors");
   });
