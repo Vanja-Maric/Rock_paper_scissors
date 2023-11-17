@@ -26,7 +26,11 @@ export class Choices {
       return "tie";
     }
 
-    
+    if (firstOption === "paper" && secondOption === "paper") {
+      return "tie";
+    }
+
+
   }
 
 
