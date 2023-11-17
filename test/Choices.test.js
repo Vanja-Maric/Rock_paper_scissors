@@ -16,5 +16,5 @@ describe("Choices", () => {
 
   test("should return 'rock' if rock vs. scissors", () => {
     const choices = new Choices();
-    expect(choices.rockBeatsScissors("rock", "scissors")).toBe("rock");
+    expect(choices.determineWinner("rock", "scissors")).toBe("rock");
   });

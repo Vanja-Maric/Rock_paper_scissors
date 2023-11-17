@@ -4,4 +4,12 @@ export class Choices {
     this.availableChoices = ["rock", "paper", "scissors"];
   }
 
+  determineWinner(firstOption, secondOption) {
+    if (firstOption === "rock" || secondOption === "rock") {
+      if (firstOption === "scissors" || secondOption === "scissors") {
+        return "rock";
+      }
+    }
+  }
+
 }
