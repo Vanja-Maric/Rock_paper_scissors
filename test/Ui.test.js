@@ -40,14 +40,14 @@ describe('Ui class', () => {
     });
   })
 
-
-  test('greetingMessage should throw exception for empty user name', () => {
+  test('greetingMessage should throw exception for empty user name', async () => {
     const mockInput = "";
     mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
     console.log = jest.fn();
+    console.error = jest.fn(); // Added to capture any console.error calls
 
-    expect(() => ui.greetingMessage()).toThrow('Username cannot be empty.');
+    await expect(ui.greetingMessage()).rejects.toThrow('Username cannot be empty.');
+  });
 
-  })
 });
 

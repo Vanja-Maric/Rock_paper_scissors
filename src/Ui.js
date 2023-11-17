@@ -17,7 +17,15 @@ export class Ui {
 
   greetingMessage() {
     return this.takeInInputFromTerminal("Please enter your name: ").then(name => {
+      if(name === "") {
+        this.throwEmptyUsernameException();
+      }
       console.log("Hello " + name);
     })
   }
+
+  throwEmptyUsernameException() {
+    throw new Error('Username cannot be empty.');
+  }
 }
+
