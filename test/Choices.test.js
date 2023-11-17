@@ -23,3 +23,8 @@ describe("Choices", () => {
     const choices = new Choices();
     expect(choices.determineWinner("paper", "rock")).toBe("paper");
   });
+
+  test("should return 'paper' if paper vs rock", () => {
+    const choices = new Choices();
+    expect(choices.determineWinner("rock", "paper")).toBe("paper");
+  });
