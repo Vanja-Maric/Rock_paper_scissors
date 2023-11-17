@@ -48,3 +48,8 @@ describe("Choices", () => {
     const choices = new Choices();
     expect(choices.determineWinner("paper", "paper")).toBe("tie");
   });
+
+  test("should return 'tie' if scissors vs scissors", () => {
+    const choices = new Choices();
+    expect(choices.determineWinner("scissors", "scissors")).toBe("tie");
+  });
