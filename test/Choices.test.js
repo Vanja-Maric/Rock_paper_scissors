@@ -28,12 +28,17 @@ describe('Choices', () => {
     ['paper', 'scissors', 'scissors'],
     ['rock', 'rock', 'tie'],
     ['paper', 'paper', 'tie'],
-    ['scissors', 'scissors', 'tie']
+    ['scissors', 'scissors', 'tie'],
   ])('when first choice is %s and second choice is %s', (firstChoice, secondChoice, expectedWinner) => {
     test(`should return '${expectedWinner}'`, () => {
       expect(choices.determineWinner(firstChoice, secondChoice)).toBe(expectedWinner);
     });
   });
+});
+
+test('Expect error if invalid option', () => {
+  const choices = new Choices();
+  expect(() => choices.determineWinner("potato", "rock")).toThrow('Invalid option');
 });
 
 // Did not run coverage soon enough, meaning we do not have full %. Earlier coverage could have helped with this.
