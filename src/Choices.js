@@ -30,7 +30,9 @@ export class Choices {
       return "tie";
     }
 
-
+    if (firstOption === "scissors" && secondOption === "scissors") {
+      return "tie";
+    }
   }
 
 
