@@ -1,3 +1,4 @@
+import { Player } from"../src/Player.js";
 
 describe("player's test cases", () => {
   test("player name to be Daniel", () => {
