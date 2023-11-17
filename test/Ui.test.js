@@ -53,5 +53,18 @@ describe('Ui class', () => {
     expect(() => ui.throwErrorIfWrongChoice("t")).toThrow('Wrong choice. Please choose again.');
   });
 
+  test('inputChoice sould return choice if valid', () => {
+    const mockInput = "r";
+    mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
+    console.log = jest.fn();
+
+    return ui.greetingMessage().then(() => {
+      expect(console.log).toHaveBeenCalledWith("r");
+      expect(mockInterface.question).toHaveBeenCalledWith("Please enter your choice: ", expect.any(Function));
+      expect(mockInterface.close).toHaveBeenCalled();
+    });
+  })
+
+
 });
 
