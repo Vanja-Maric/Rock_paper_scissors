@@ -21,6 +21,10 @@ export class Choices {
         return "scissors";
       }
     }
+
+    if (firstOption === "rock" && secondOption === "rock") {
+      return "tie";
+    }
   }
 
 
