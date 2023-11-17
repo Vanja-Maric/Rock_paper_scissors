@@ -14,3 +14,8 @@ test("Choices should have paper at index 1 in avalviable choices ", () => {
   const choices = new Choices();
   expect(choices.availableChoices[1]).toBe("paper");
 });
+
+test("Choices should have paper at index 2 in avalviable choices ", () => {
+  const choices = new Choices();
+  expect(choices.availableChoices[2]).toBe("scissors");
+});
