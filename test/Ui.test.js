@@ -27,4 +27,16 @@ describe('Ui class', () => {
       expect(mockInterface.close).toHaveBeenCalled();
     });
   });
+
+  test('greetingMessage logs the correct message with the user name', () => {
+    const mockInput = "Daniel";
+    mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
+    console.log = jest.fn();
+
+    return ui.greetingMessage().then(() => {
+      expect(console.log).toHaveBeenCalledWith("Hello Daniel");
+      expect(mockInterface.question).toHaveBeenCalledWith("Please enter your name: ", expect.any(Function));
+      expect(mockInterface.close).toHaveBeenCalled();
+    });
+  })
 });

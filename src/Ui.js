@@ -15,6 +15,10 @@ export class Ui {
     });
   }
 
-
+  greetingMessage() {
+    return this.takeInInputFromTerminal("Please enter your name: ").then(name => {
+      console.log("Hello " + name);
+    })
+  }
 }
 
