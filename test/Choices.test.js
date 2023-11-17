@@ -13,43 +13,25 @@ describe("Choices", () => {
   });
 });
 
+describe('Choices', () => {
+  let choices;
 
-  test("should return 'rock' if rock vs. scissors", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("rock", "scissors")).toBe("rock");
+  beforeEach(() => {
+      choices = new Choices();
   });
 
-  test("should return 'paper' if paper vs rock", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("paper", "rock")).toBe("paper");
+  describe.each([
+      ['rock', 'scissors', 'rock'],
+      ['paper', 'rock', 'paper'],
+      ['rock', 'paper', 'paper'],
+      ['scissors', 'paper', 'scissors'],
+      ['paper', 'scissors', 'scissors'],
+      ['rock', 'rock', 'tie'],
+      ['paper', 'paper', 'tie'],
+      ['scissors', 'scissors', 'tie']
+  ])('when first choice is %s and second choice is %s', (firstChoice, secondChoice, expectedWinner) => {
+      test(`should return '${expectedWinner}'`, () => {
+          expect(choices.determineWinner(firstChoice, secondChoice)).toBe(expectedWinner);
+      });
   });
-
-  test("should return 'paper' if rock vs paper", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("rock", "paper")).toBe("paper");
-  });
-
-  test("should return 'scissors' if scissors vs paper", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("scissors", "paper")).toBe("scissors");
-  });
-
-  test("should return 'scissors' if paper vs scissors", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("paper", "scissors")).toBe("scissors");
-  });
-
-  test("should return 'tie' if rock vs rock", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("rock", "rock")).toBe("tie");
-  });
-
-  test("should return 'tie' if paper vs paper", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("paper", "paper")).toBe("tie");
-  });
-
-  test("should return 'tie' if scissors vs scissors", () => {
-    const choices = new Choices();
-    expect(choices.determineWinner("scissors", "scissors")).toBe("tie");
-  });
+});

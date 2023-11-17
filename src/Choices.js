@@ -5,7 +5,6 @@ export class Choices {
   }
 
   determineWinner(firstOption, secondOption) {
-
     if (firstOption === secondOption) {
       return "tie";
     }
