@@ -28,8 +28,14 @@ export class Ui {
     throw new Error('Username cannot be empty.');
   }
 
+  async choiceInput() {
+    const choice = await this.takeInInputFromTerminal("Please enter your choice: ");
+    this.throwErrorIfWrongChoice(choice);
+    console.log(choice);
+  }
+
   throwErrorIfWrongChoice(choice) {
-    if (choice !== "r" || choice !== "p" || choice !== "s") {
+    if (choice !== "r" && choice !== "p" && choice !== "s") {
       throw new Error('Wrong choice. Please choose again.');
     }
   }
