@@ -33,3 +33,8 @@ describe("Choices", () => {
     const choices = new Choices();
     expect(choices.determineWinner("scissors", "paper")).toBe("scissors");
   });
+
+  test("should return 'scissors' if paper vs scissors", () => {
+    const choices = new Choices();
+    expect(choices.determineWinner("paper", "scissors")).toBe("scissors");
+  });
