@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node src/Ui.js",
     "test": "jest",
     "coverage": "jest --coverage"
   },
