@@ -17,7 +17,7 @@ export class Ui {
 
   greetingMessage() {
     return this.takeInInputFromTerminal("Please enter your name: ").then(name => {
-      if(name === "") {
+      if (name === "") {
         this.throwEmptyUsernameException();
       }
       console.log("Hello " + name);
@@ -27,5 +27,10 @@ export class Ui {
   throwEmptyUsernameException() {
     throw new Error('Username cannot be empty.');
   }
-}
 
+  throwErrorIfWrongChoice(choice) {
+    if (choice !== "r" || choice !== "p" || choice !== "s") {
+      throw new Error('Wrong choice. Please choose again.');
+    }
+  }
+}
