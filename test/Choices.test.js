@@ -41,4 +41,3 @@ test('Expect error if invalid option', () => {
   expect(() => choices.determineWinner("potato", "rock")).toThrow('Invalid option');
 });
 
-// Did not run coverage soon enough, meaning we do not have full %. Earlier coverage could have helped with this.

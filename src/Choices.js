@@ -17,6 +17,8 @@ export class Choices {
       return firstOption;
     } else if (winningMap[secondOption] === firstOption) {
       return secondOption;
+    } else {
+      throw new Error('Invalid option');
     }
   }
 
