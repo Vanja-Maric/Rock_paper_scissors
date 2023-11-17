@@ -12,14 +12,15 @@ describe('Player', () => {
   });
 });
 
-test('shouldAllowPlayerToSetChoiceRock', () => {
-  const player = new Player('Daniel');
-  player.setChoice('rock');
-  expect(player.choice).toBe('rock');
-});
-
-test('shouldAllowPlayerToSetChoicePaper', () => {
-  const player = new Player('Daniel');
-  player.setChoice('paper');
-  expect(player.choice).toBe('paper');
+describe('Choice should allow player to set choice', () => {
+  describe.each([
+    ['Rock'],
+    ['Paper']
+  ])('with choice %s', (choice) => {
+    test('should set a given choice', () => {
+      const player = new Player("Daniel");
+      player.setChoice(choice)
+      expect(player.choice).toBe(choice);
+    });
+  });
 });
