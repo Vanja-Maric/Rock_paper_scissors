@@ -1,7 +1,7 @@
 export class Player {
 
   constructor(name) {
-    this.name = "Daniel";
+    this.name = name;
   }
 
 }
