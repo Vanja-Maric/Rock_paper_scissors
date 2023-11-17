@@ -15,8 +15,11 @@ export class Choices {
         return "paper";
       }
     }
-    if (firstOption === "scissors" && secondOption === "paper") {
-      return "scissors";
+
+    if (firstOption === "scissors" || secondOption === "scissors") {
+      if (firstOption === "paper" || secondOption === "paper") {
+        return "scissors";
+      }
     }
   }
 
