@@ -12,3 +12,9 @@ describe("Choices", () => {
     expect(choices.availableChoices[index]).toBe(expectedChoice);
   });
 });
+
+
+  test("should return 'rock' if rock vs. scissors", () => {
+    const choices = new Choices();
+    expect(choices.rockBeatsScissors("rock", "scissors")).toBe("rock");
+  });
