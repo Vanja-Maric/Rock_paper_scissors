@@ -10,6 +10,10 @@ export class Choices {
         return "rock";
       }
     }
+    if (firstOption === "paper" && secondOption === "rock") {
+      return "paper";
+    }
   }
+
 
 }
