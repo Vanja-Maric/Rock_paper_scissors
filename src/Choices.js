@@ -15,6 +15,9 @@ export class Choices {
         return "paper";
       }
     }
+    if (firstOption === "scissors" && secondOption === "paper") {
+      return "scissors";
+    }
   }
 
 
