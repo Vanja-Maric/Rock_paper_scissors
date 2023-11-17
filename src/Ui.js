@@ -40,5 +40,7 @@ export class Ui {
     }
   }
 
-
+  presentWinner(name) {
+    console.log(name + " wins!")
+  }
 }
