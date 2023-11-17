@@ -5,4 +5,9 @@ describe("player's test cases", () => {
   const player = new Player("Daniel");
   expect(player.name).toBe("Daniel");
   }); 
+
+  test("player name to be Tobias", () => {
+    const player = new Player("Tobias");
+    expect(player.name).toBe("Tobias");
+    }); 
 });
