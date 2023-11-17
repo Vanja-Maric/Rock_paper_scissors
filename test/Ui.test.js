@@ -44,7 +44,7 @@ describe('Ui class', () => {
     const mockInput = "";
     mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
     console.log = jest.fn();
-    console.error = jest.fn(); // Added to capture any console.error calls
+    console.error = jest.fn();
 
     await expect(ui.greetingMessage()).rejects.toThrow('Username cannot be empty.');
   });
