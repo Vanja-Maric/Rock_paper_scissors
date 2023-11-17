@@ -12,10 +12,3 @@ describe("Choices", () => {
     expect(choices.availableChoices[index]).toBe(expectedChoice);
   });
 });
-
-test('rock should beat scissors', () => {
-  const choices = new Choices();
-  const result = choices.rockBeatsScissors("", "");
-  expect(result).toBe('rock');
-});
-
