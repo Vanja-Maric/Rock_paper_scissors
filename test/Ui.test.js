@@ -74,6 +74,13 @@ describe('Ui class', () => {
     expect(console.log).toHaveBeenCalledWith("Daniel wins!");
   });
 
+  test('playMessage presents options', () => {
+    const mockMessage = "Press p to play, q to quit.";
+    console.log = jest.fn();
+    
+    ui.playMessage();
+    expect(console.log).toHaveBeenCalledWith(mockMessage);
+  })
 
 });
 
