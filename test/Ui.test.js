@@ -85,18 +85,36 @@ describe('Ui class', () => {
     });
   })
 
-  test('playMessage returns correct boolean', () => {
-    const mockInput = "p";
+
+ /*   test('playMessage takes input and calls checkPlay', () => {
+      const mockInput = "p";
+      mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
+      ui.checkPlay = jest.fn();
+      ui.checkPlay = jest.fn().mockReturnValue(true);
+
+      return ui.playMessage().then(() => {
+        expect(mockInterface.question).toHaveBeenCalledWith("Press p to play, q to quit.", expect.any(Function));
+        expect(ui.checkPlay).toHaveBeenCalledWith(mockInput);
+        expect(ui.playMessage()).toBe(true)
+      });
+  })*/
+
+  test('playMessage logs the correct message and returns the correct value', () => {
+    const mockInput = "p"; // or "q" to test the quit functionality
     mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
     console.log = jest.fn();
 
-    return ui.playMessage().then(() => {
-      expect(console.log).toHaveBeenCalledWith(true);
-      expect(mockInterface.question).toHaveBeenCalledWith("Press p to play, q to quit.", expect.any(Function));
+    return ui.playMessage().then(result => {
+      expect(console.log).toHaveBeenCalledWith("Press p to play, q to quit.");
+      if (mockInput === "p") {
+        expect(result).toBe(true);
+      } else if (mockInput === "q") {
+        expect(result).toBe(false);
+      }
+      expect(mockInterface.question).toHaveBeenCalledWith("Enter: ", expect.any(Function));
       expect(mockInterface.close).toHaveBeenCalled();
-      expect(ui.playMessage()).toBe(true);
     });
-  })
+  });
 
   describe('checkPlay method', () => {
     const validTestCases = [

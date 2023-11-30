@@ -46,6 +46,9 @@ export class Ui {
 
   playMessage() {
     console.log("Press p to play, q to quit.");
+    return this.takeInInputFromTerminal("Enter: ").then(input => {
+      return this.checkPlay(input);
+    })
   }
 
   checkPlay(input) {
