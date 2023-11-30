@@ -51,7 +51,6 @@ export class Ui {
   checkPlay(input) {
     if (input === "p") {
      return true;
-    }
-    return false;
+    } 
   }
 }
