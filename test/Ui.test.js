@@ -87,7 +87,7 @@ describe('Ui class', () => {
 
   test('method returns true for input "p"', () => {
     const input = "p";
-    expect(checkPlay(input)).toBe(true);
+    expect(ui.checkPlay(input)).toBe(true);
   });
 });
 

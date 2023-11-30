@@ -48,4 +48,9 @@ export class Ui {
     console.log("Press p to play, q to quit.");
   }
 
+  checkPlay(input) {
+    if (input === "p") {
+     return true;
+    }
+  }
 }
