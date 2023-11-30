@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701343272705" clover="3.2.0">
-  <project timestamp="1701343272705" name="All files">
-    <metrics statements="37" coveredstatements="37" conditionals="17" coveredconditionals="17" methods="18" coveredmethods="18" elements="72" coveredelements="72" complexity="0" loc="37" ncloc="37" packages="1" files="4" classes="4"/>
+<coverage generated="1701344566039" clover="3.2.0">
+  <project timestamp="1701344566039" name="All files">
+    <metrics statements="41" coveredstatements="41" conditionals="17" coveredconditionals="17" methods="20" coveredmethods="20" elements="78" coveredelements="78" complexity="0" loc="41" ncloc="41" packages="1" files="4" classes="4"/>
     <file name="Choices.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Choices.js">
       <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <line num="4" count="12" type="stmt"/>
@@ -15,13 +15,17 @@
       <line num="21" count="1" type="stmt"/>
     </file>
     <file name="Game.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Game.js">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="8" count="1" type="stmt"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
     </file>
     <file name="Player.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Player.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="4" count="4" type="stmt"/>
-      <line num="5" count="4" type="stmt"/>
+      <line num="4" count="8" type="stmt"/>
+      <line num="5" count="8" type="stmt"/>
       <line num="9" count="2" type="stmt"/>
     </file>
     <file name="Ui.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Ui.js">
