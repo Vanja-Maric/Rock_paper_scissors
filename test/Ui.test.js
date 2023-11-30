@@ -100,5 +100,10 @@ describe('Ui class', () => {
     expect(() => ui.checkPlay(input)).toThrow('Wrong choice. Please choose again.');
   });
 
+  test('checkPlay should throw exception for wrong choice number 1', () => {
+    const input = "1";
+    expect(() => ui.checkPlay(input)).toThrow('Wrong choice. Please choose again.');
+  });
+
 });
 
