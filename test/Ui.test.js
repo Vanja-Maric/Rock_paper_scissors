@@ -92,25 +92,22 @@ describe('Ui class', () => {
     ui.playMessage();
     expect(console.log).toHaveBeenCalledWith(mockMessage);
   });
-
-  test('method returns true for input "p"', () => {
-    const input = "p";
-    expect(ui.checkPlay(input)).toBe(true);
-  });
-
-  test('method returns false for input "q"', () => {
-    const input = "q";
-    expect(ui.checkPlay(input)).toBe(false);
-  });
-
-  test('checkPlay should throw exception for wrong choice', () => {
-    const input = "t";
-    expect(() => ui.checkPlay(input)).toThrow('Wrong choice. Please choose again.');
-  });
-
-  test('checkPlay should throw exception for wrong choice number 1', () => {
-    const input = "1";
-    expect(() => ui.checkPlay(input)).toThrow('Wrong choice. Please choose again.');
+  
+  describe('checkPlay method', () => {
+    const validTestCases = [
+      ["p", true],
+      ["q", false],
+    ];
+    test.each(validTestCases)("checkPlay returns %s for input '%s'", (input, expected) => {
+      expect(ui.checkPlay(input)).toBe(expected);
+    });
+    const invalidTestCases = [
+      "t",
+      "1",
+    ];
+    test.each(invalidTestCases)("checkPlay should throw exception for wrong choice '%s'", (input) => {
+      expect(() => ui.checkPlay(input)).toThrow('Wrong choice. Please choose again.');
+    });
   });
 
 });
