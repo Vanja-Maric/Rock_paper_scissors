@@ -53,6 +53,8 @@ export class Ui {
      return true;
     } else if (input === "q") {
      return false;
+    } else if (input === "t") {
+     throw new Error('Wrong choice. Please choose again.');
     }
   }
 }
