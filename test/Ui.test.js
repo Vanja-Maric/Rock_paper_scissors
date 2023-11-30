@@ -85,6 +85,14 @@ describe('Ui class', () => {
     });
   })
 
+  test('playMessage presents options', () => {
+    const mockMessage = "Press p to play, q to quit.";
+    console.log = jest.fn();
+
+    ui.playMessage();
+    expect(console.log).toHaveBeenCalledWith(mockMessage);
+  });
+
   test('method returns true for input "p"', () => {
     const input = "p";
     expect(ui.checkPlay(input)).toBe(true);
