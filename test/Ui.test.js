@@ -85,5 +85,12 @@ describe('Ui class', () => {
     });
   })
 
+  test('method returns true for input "p"', () => {
+    const mockInput = "p";
+    mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
+    return ui.checkPlay().then(result => {
+      expect(result).toBe(true);
+    });
+  });
 });
 
