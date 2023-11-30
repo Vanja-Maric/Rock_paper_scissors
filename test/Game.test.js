@@ -22,5 +22,10 @@ describe('Game', () => {
     expect(mockGreetingMessage).toHaveBeenCalled();
   });
 
+  test('createHumanPlayer should create one player', () => {
+    const game = new Game();
+    game.createHumanPlayer(' ');
+    expect(game.players.length).toBe(1);
+  });
  
 });
