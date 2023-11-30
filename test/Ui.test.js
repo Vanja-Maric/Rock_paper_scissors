@@ -74,12 +74,15 @@ describe('Ui class', () => {
     expect(console.log).toHaveBeenCalledWith("Daniel wins!");
   });
 
-  test('playMessage presents options', () => {
-    const mockMessage = "Press p to play, q to quit.";
+  test('greetingMessage logs the correct message with the user name', () => {
+    const mockInput = "Daniel";
+    mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
     console.log = jest.fn();
-    
-    ui.playMessage();
-    expect(console.log).toHaveBeenCalledWith(mockMessage);
+    return ui.greetingMessage().then(() => {
+      expect(console.log).toHaveBeenCalledWith("Hello Daniel");
+      expect(mockInterface.question).toHaveBeenCalledWith("Please enter your name: ", expect.any(Function));
+      expect(mockInterface.close).toHaveBeenCalled();
+    });
   })
 
 });

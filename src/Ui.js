@@ -43,4 +43,9 @@ export class Ui {
   presentWinner(name) {
     console.log(name + " wins!")
   }
+
+  playMessage() {
+    console.log("Press p to play, q to quit.");
+  }
+  
 }
