@@ -29,5 +29,11 @@ describe('Game', () => {
     expect(game.players.length).toBe(1);
     expect(game.players[0]).toBeInstanceOf(Player);
   });
+
+  test('createHumanPlayer should create one player which name is Human player', () => {
+    const game = new Game();
+    game.createHumanPlayer();
+    expect(game.players[0].name).toBe('Human player');
+  });
  
 });
