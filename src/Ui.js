@@ -47,5 +47,5 @@ export class Ui {
   playMessage() {
     console.log("Press p to play, q to quit.");
   }
-  
+
 }
