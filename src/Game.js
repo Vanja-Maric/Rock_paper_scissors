@@ -13,6 +13,6 @@ export class Game {
   }
 
   createHumanPlayer() {
-    this.players.push(new Player("John"));
+    this.players.push(new Player("Human player"));
   }
 }
