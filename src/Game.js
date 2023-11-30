@@ -6,5 +6,6 @@ export class Game {
 
   start() {
    const ui = new Ui();
+    ui.greetingMessage();
   }
 }
