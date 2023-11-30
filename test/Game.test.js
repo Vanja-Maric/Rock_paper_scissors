@@ -43,4 +43,10 @@ describe('Game', () => {
     expect(game.players[0]).toBeInstanceOf(Player);
   });
 
+  test('createComputerPlayer should create one player which name is Computer player', () => {
+    const game = new Game();
+    game.createComputerPlayer();
+    expect(game.players[0].name).toBe('Computer player');
+  });
+
 });
