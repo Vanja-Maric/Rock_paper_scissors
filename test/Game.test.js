@@ -1,5 +1,6 @@
 import { Game } from "../src/Game.js";
 import { Ui } from "../src/Ui.js";
+import { Player } from "../src/Player.js";
 
 jest.mock('../src/Ui.js'); 
 describe('Game', () => {
@@ -24,8 +25,9 @@ describe('Game', () => {
 
   test('createHumanPlayer should create one player', () => {
     const game = new Game();
-    game.createHumanPlayer(' ');
+    game.createHumanPlayer();
     expect(game.players.length).toBe(1);
+    expect(game.players[0]).toBeInstanceOf(Player);
   });
  
 });
