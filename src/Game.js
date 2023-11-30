@@ -17,6 +17,6 @@ export class Game {
   }
 
   createComputerPlayer() {
-    this.players.push(new Player("John Doe"));
+    this.players.push(new Player("Computer player"));
   }
 }
