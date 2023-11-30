@@ -8,4 +8,17 @@ describe('Game', () => {
     game.start();
     expect(Ui).toHaveBeenCalledTimes(1);
   });
+
+  test('should call greetingMessage on UI class', () => {
+    const mockGreetingMessage = jest.fn();
+    Ui.mockImplementation(() => {
+      return {
+        greetingMessage: mockGreetingMessage
+      };
+    });
+    const game = new Game();
+    game.start();
+
+    expect(mockGreetingMessage).toHaveBeenCalled();
+  });
 });
