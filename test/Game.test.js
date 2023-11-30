@@ -36,4 +36,11 @@ describe('Game', () => {
     expect(game.players[0].name).toBe('Human player');
   });
  
+  test('createComputerPlayer should create second player', () => {
+    const game = new Game();
+    game.createComputerPlayer();
+    expect(game.players.length).toBe(1);
+    expect(game.players[0]).toBeInstanceOf(Player);
+  });
+
 });
