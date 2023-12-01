@@ -121,6 +121,7 @@ describe('Ui class', () => {
 
   test('check ExitMessage should log the correct message', () => {
     console.log = jest.fn();
+    ui.exitMessage();
     expect(console.log).toHaveBeenCalledWith("Exiting...");
   });
 });

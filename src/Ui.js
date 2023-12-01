@@ -60,4 +60,8 @@ export class Ui {
      throw new Error('Wrong choice. Please choose again.');
     }
   }
+
+  exitMessage() {
+    console.log("Exiting...")
+  }
 }
