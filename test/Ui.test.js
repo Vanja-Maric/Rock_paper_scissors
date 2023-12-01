@@ -55,14 +55,14 @@ describe('Ui class', () => {
 
 
   test('inputChoice should return choice if valid', () => {
-    const mockInput = "r";
+    const mockInput = "rock";
     mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
     console.log = jest.fn();
 
-    return ui.choiceInput().then(choice => { 
+    return ui.choiceInput().then(choice => {
       expect(choice).toBe(mockInput);
-      expect(console.log).toHaveBeenCalledWith("r");
-      expect(mockInterface.question).toHaveBeenCalledWith("Enter 'r' for rock, 'p' for paper, and 's' for scissors. \n Please enter your choice: ", expect.any(Function));
+      expect(console.log).toHaveBeenCalledWith("rock");
+      expect(mockInterface.question).toHaveBeenCalledWith("Enter 'rock' for rock, 'paper' for paper, and 'scissors' for scissors. \n Please enter your choice: ", expect.any(Function));
       expect(mockInterface.close).toHaveBeenCalled();
     });
   })

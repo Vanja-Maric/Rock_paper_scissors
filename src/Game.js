@@ -28,8 +28,12 @@ export class Game {
     } else {
       this.createHumanPlayer();
       this.createComputerPlayer();
-      ui.choiceInput();
+      const humanChoice = ui.choiceInput();
     }
+  }
+
+  setHumanChoice(choice) {
+    this.players[0].setChoice(choice);
   }
 
 

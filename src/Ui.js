@@ -29,7 +29,7 @@ export class Ui {
   }
 
   async choiceInput() {
-    const choice = await this.takeInInputFromTerminal("Enter 'r' for rock, 'p' for paper, and 's' for scissors. \n Please enter your choice: ");
+    const choice = await this.takeInInputFromTerminal("Enter 'rock' for rock, 'paper' for paper, and 'scissors' for scissors. \n Please enter your choice: ");
     this.throwErrorIfWrongChoice(choice);
     console.log(choice);
     return choice;
@@ -37,7 +37,7 @@ export class Ui {
   }
 
   throwErrorIfWrongChoice(choice) {
-    if (choice !== "r" && choice !== "p" && choice !== "s") {
+    if (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
       throw new Error('Wrong choice. Please choose again.');
     }
   }
