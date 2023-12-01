@@ -25,6 +25,9 @@ export class Game {
     const ui = new Ui();
     if (boolean === false) {
       ui.exitMessage();
+    } else {
+      this.createHumanPlayer();
+      this.createComputerPlayer();
     }
   }
 

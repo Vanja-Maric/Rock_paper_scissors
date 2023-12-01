@@ -82,6 +82,10 @@ describe('Game', () => {
   test('should call createHumanPlayer and createComputerPlayer if play takes boolean true', () => {
 
     const game = new Game();
+
+    jest.spyOn(game, 'createHumanPlayer');
+    jest.spyOn(game, 'createComputerPlayer');
+    
     game.play(true);
     expect(game.createHumanPlayer).toHaveBeenCalled()
     expect(game.createComputerPlayer).toHaveBeenCalled()
