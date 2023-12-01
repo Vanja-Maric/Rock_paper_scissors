@@ -5,6 +5,7 @@ import { Ui } from "../src/Ui.js";
 
 jest.mock('../src/Choices.js');
 jest.mock('../src/Ui.js');
+
 describe('Game', () => {
 
   test('should create a new Ui instance in start function', () => {
@@ -41,14 +42,14 @@ describe('Game', () => {
   });
 
 
-  test('should call greetingMessage and playMessage on UI class', () => {
+  test('should call greetingMessage and playMessage on UI class', async () => {
     // Mock implementations for Ui class methods
-    const mockGreetingMessage = jest.fn();
-    const mockPlayMessage = jest.fn().mockReturnValue(true); // Assuming playMessage returns a boolean
+    const mockGreetingMessage = jest.fn().mockResolvedValue();
+    const mockPlayMessage = jest.fn().mockResolvedValue(true); // Assuming playMessage returns a boolean
     Ui.mockImplementation(() => {
       return {
         greetingMessage: mockGreetingMessage,
-        playMessage: mockPlayMessage
+        playMessage: mockPlayMessage,
       };
     });
 
@@ -56,16 +57,16 @@ describe('Game', () => {
     const game = new Game();
 
     // Spy on game.play
-    jest.spyOn(game, 'play').mockImplementation(() => { });
+    jest.spyOn(game, 'play').mockResolvedValue(); // Mock play as a resolved promise
 
     // Call start
-    game.start();
+    await game.start();
 
-    // Assertions
     expect(mockGreetingMessage).toHaveBeenCalled();
     expect(mockPlayMessage).toHaveBeenCalled();
-    expect(game.play).toHaveBeenCalledWith(true); // Expect that game.play was called with the value returned by mockPlayMessage
+    expect(game.play).toHaveBeenCalledWith(true);
   });
+
 
   test('should display exit message if play takes boolean false', () => {
     const mockExitMessage = jest.fn();
@@ -81,7 +82,7 @@ describe('Game', () => {
   });
 
 
-  test('should call createHumanPlayer and createComputerPlayer if play takes boolean true', () => {
+  test('should call createHumanPlayer and createComputerPlayer if play takes boolean true', async () => {
 
     const mockChoiceInput = jest.fn();
     const mockPresentWinner = jest.fn();
@@ -100,7 +101,7 @@ describe('Game', () => {
     jest.spyOn(game, 'setComputerChoice');
     jest.spyOn(game, 'determineWinner');
 
-    game.play(true);
+    await game.play(true);
     expect(game.createHumanPlayer).toHaveBeenCalled()
     expect(game.createComputerPlayer).toHaveBeenCalled()
     expect(game.players.length).toBe(2);

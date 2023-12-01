@@ -8,14 +8,45 @@ export class Game {
 
   constructor() {
   }
+  async start() {
+    const ui = new Ui();
+    try {
+      await ui.greetingMessage();
+      const boolean = await ui.playMessage();
+      await this.play(boolean);
+    } catch (error) {
+      console.error(error.message);
+      // Handle the error or exit the game
+    }
+  }
 
-  start() {
+  async play(boolean) {
+    const ui = new Ui();
+    if (boolean === false) {
+      ui.exitMessage();
+    } else {
+      this.createHumanPlayer();
+      this.createComputerPlayer();
+      try {
+        const humanChoice = await ui.choiceInput();
+        this.setHumanChoice(humanChoice);
+        this.setComputerChoice();
+        const nameOfWinner = this.determineWinner();
+        ui.presentWinner(nameOfWinner);
+      } catch (error) {
+        console.error(error.message);
+        // Handle the error or provide an option to retry
+      }
+    }
+  }
+
+  /*start() {
     const ui = new Ui();
     ui.greetingMessage();
     const boolean = ui.playMessage();
     this.play(boolean);
 
-  }
+  }*/
 
   createHumanPlayer() {
     this.players.push(new Player("Human player"));
@@ -25,7 +56,7 @@ export class Game {
     this.players.push(new Player("Computer player"));
   }
 
-  play(boolean) {
+  /*play(boolean) {
     const ui = new Ui();
     if (boolean === false) {
       ui.exitMessage();
@@ -39,7 +70,7 @@ export class Game {
       ui.presentWinner(nameOfWinner);
 
     }
-  }
+}*/
 
   setHumanChoice(choice) {
     this.players[0].setChoice(choice);
@@ -54,7 +85,7 @@ export class Game {
   determineWinner() {
     const choices = new Choices();
     const winningChoice = choices.determineWinner(this.players[0].choice, this.players[1].choice);
-    console.log("Human Player chose: " + this.players[0].choice + " and Computer player chose: "+ this.players[1].choice);
+    console.log("Human Player chose: " + this.players[0].choice + " and Computer player chose: " + this.players[1].choice);
     if (winningChoice == this.players[0].choice) {
       return this.players[0].name;
     } else if (winningChoice == this.players[1].choice) {
