@@ -50,10 +50,13 @@ describe('Game', () => {
       };
     });
     const game = new Game();
+
+    jest.spyOn(game, 'play');
     game.start();
 
     expect(mockGreetingMessage).toHaveBeenCalled()
     expect(mockPlayMessage).toHaveBeenCalled();
+    expect(game.play).toHaveBeenCalled()
   });
 
   test('should display exit message if play takes boolean false', () => {
