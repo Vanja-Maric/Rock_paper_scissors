@@ -3,7 +3,7 @@ import { Game } from "../src/Game.js";
 import { Player } from "../src/Player.js";
 import { Ui } from "../src/Ui.js";
 
-
+jest.mock('../src/Choices.js');
 jest.mock('../src/Ui.js');
 describe('Game', () => {
 
@@ -113,17 +113,29 @@ describe('Game', () => {
   });
 
   test('determine winner options calls choices class', () => {
-    jest.mock('../src/Choices.js');
-    const mockDetermineWinner = jest.fn();
+    // Define choices and expected winner
+    const humanChoice = 'rock';
+    const computerChoice = 'paper';
+    const expectedWinner = 'Computer player'; // Adjust based on your game logic
+
+    const mockDetermineWinner = jest.fn().mockReturnValue(computerChoice);
     Choices.mockImplementation(() => {
       return {
         determineWinner: mockDetermineWinner
       };
     });
-    const game = new Game();
-    game.determineWinner();
-    expect(mockDetermineWinner).toHaveBeenCalled();
 
-  })
+    const game = new Game();
+    game.createHumanPlayer();
+    game.createComputerPlayer();
+
+    game.players[0].setChoice(humanChoice);
+    game.players[1].setChoice(computerChoice);
+
+    const winner = game.determineWinner();
+
+    expect(mockDetermineWinner).toHaveBeenCalledWith(humanChoice, computerChoice);
+    expect(winner).toBe(expectedWinner);
+  });
 
 });

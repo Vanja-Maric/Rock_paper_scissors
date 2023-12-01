@@ -1,5 +1,7 @@
-import { Ui } from './Ui.js';
+import { Choices } from './Choices.js';
 import { Player } from './Player.js';
+import { Ui } from './Ui.js';
+
 
 export class Game {
   players = [];
@@ -42,5 +44,20 @@ export class Game {
     this.players[1].setChoice(choices[randomChoice]);
   }
 
-  
+  /*determineWinner() {
+    const choices = new Choices();
+    const winningChoice = choices.determineWinner(this.players[0].choice, this.players[1].choice);
+    console.log("Human Player chose: " + this.players[0].choice + "and Computer player chose: "+ this.players[1].choice);
+    if (winningChoice == this.players[0].choice) {
+      return this.players[0].name;
+    } else if (winningChoice == this.players[1].choice) {
+      return this.players[1].name;
+    } else {
+      return "tie";
+    }
+
+  }*/
+
+
+
 }
