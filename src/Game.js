@@ -31,6 +31,8 @@ export class Game {
       this.createHumanPlayer();
       this.createComputerPlayer();
       const humanChoice = ui.choiceInput();
+
+
     }
   }
 

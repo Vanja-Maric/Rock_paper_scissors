@@ -73,9 +73,11 @@ describe('Game', () => {
   test('should call createHumanPlayer and createComputerPlayer if play takes boolean true', () => {
 
     const mockChoiceInput = jest.fn();
+    const mockPresentWinner = jest.fn();
     Ui.mockImplementation(() => {
       return {
-        choiceInput: mockChoiceInput
+        choiceInput: mockChoiceInput,
+        presentWinner: mockPresentWinner
       };
     });
 
@@ -83,12 +85,19 @@ describe('Game', () => {
 
     jest.spyOn(game, 'createHumanPlayer');
     jest.spyOn(game, 'createComputerPlayer');
+    jest.spyOn(game, 'setHumanChoice');
+    jest.spyOn(game, 'setComputerChoice');
+    jest.spyOn(game, 'determineWinner');
 
     game.play(true);
     expect(game.createHumanPlayer).toHaveBeenCalled()
     expect(game.createComputerPlayer).toHaveBeenCalled()
     expect(game.players.length).toBe(2);
     expect(mockChoiceInput).toHaveBeenCalled()
+    expect(game.setHumanChoice).toHaveBeenCalled()
+    expect(game.setComputerChoice).toHaveBeenCalled()
+    expect(game.determineWinner).toHaveBeenCalled()
+    expect(mockPresentWinner).toHaveBeenCalled()
   })
 
   test('should call setHumanChoice with choice', () => {
