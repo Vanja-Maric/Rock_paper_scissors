@@ -4,13 +4,14 @@ import { Player } from "../src/Player.js";
 
 jest.mock('../src/Ui.js');
 describe('Game', () => {
+
   test('should create a new Ui instance in start function', () => {
     const game = new Game();
     game.start();
     expect(Ui).toHaveBeenCalledTimes(1);
   });
 
-  test('should call greetingMessage on UI class', () => {
+  /*test('should call greetingMessage on UI class', () => {
     const mockGreetingMessage = jest.fn();
     Ui.mockImplementation(() => {
       return {
@@ -21,7 +22,7 @@ describe('Game', () => {
     game.start();
 
     expect(mockGreetingMessage).toHaveBeenCalled();
-  });
+  });*/
 
   test('createHumanPlayer should create one player', () => {
     const game = new Game();
@@ -49,16 +50,19 @@ describe('Game', () => {
     expect(game.players[0].name).toBe('Computer player');
   });
 
-  test('should call playMessage on UI class', () => {
+  test('should call greetingMessage and playMessage on UI class', () => {
+    const mockGreetingMessage = jest.fn();
     const mockPlayMessage = jest.fn();
     Ui.mockImplementation(() => {
       return {
+        greetingMessage: mockGreetingMessage,
         playMessage: mockPlayMessage
       };
     });
     const game = new Game();
     game.start();
 
+    expect(mockGreetingMessage).toHaveBeenCalled()
     expect(mockPlayMessage).toHaveBeenCalled();
   });
 

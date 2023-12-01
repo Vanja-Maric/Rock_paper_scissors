@@ -4,12 +4,13 @@ import { Player } from './Player.js';
 export class Game {
   players = [];
 
-  constructor() { 
+  constructor() {
   }
 
   start() {
    const ui = new Ui();
     ui.greetingMessage();
+    ui.playMessage()
   }
 
   createHumanPlayer() {
@@ -19,4 +20,5 @@ export class Game {
   createComputerPlayer() {
     this.players.push(new Player("Computer player"));
   }
+
 }
