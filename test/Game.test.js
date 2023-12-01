@@ -8,6 +8,17 @@ jest.mock('../src/Ui.js');
 
 describe('Game', () => {
 
+  // Mock implementations for Ui class methods
+  beforeEach(() => {
+    Ui.mockImplementation(() => ({
+      greetingMessage: jest.fn().mockResolvedValue(),
+      playMessage: jest.fn().mockResolvedValue(true),
+      choiceInput: jest.fn().mockResolvedValue('rock'),
+      presentWinner: jest.fn(),
+      exitMessage: jest.fn(),
+    }));
+  });
+
   test('should create a new Ui instance in start function', () => {
     const game = new Game();
     game.start();
@@ -173,4 +184,40 @@ describe('Game', () => {
     });
 
   });
+
+  test('start method should handle errors correctly', async () => {
+    const mockError = new Error('Error in greetingMessage');
+    Ui.mockImplementation(() => ({
+      greetingMessage: jest.fn().mockRejectedValue(mockError),
+      playMessage: jest.fn().mockResolvedValue(true),
+      // ... other methods
+    }));
+
+    const game = new Game();
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
+
+    await game.start();
+
+    expect(consoleErrorSpy).toHaveBeenCalledWith(mockError.message);
+    consoleErrorSpy.mockRestore();
+  });
+
+  /*test('play method should handle errors correctly', async () => {
+    const mockError = new Error('Error in choiceInput');
+    Ui.mockImplementation(() => ({
+      choiceInput: jest.fn().mockRejectedValue(mockError),
+      // ... other methods
+    }));
+
+    const game = new Game();
+    game.createHumanPlayer(); // necessary setup for play method
+    game.createComputerPlayer(); // necessary setup for play method
+
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
+
+    await game.play(true);
+
+    expect(consoleErrorSpy).toHaveBeenCalledWith(mockError.message);
+    consoleErrorSpy.mockRestore();
+  });*/
 })

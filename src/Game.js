@@ -15,7 +15,7 @@ export class Game {
       const boolean = await ui.playMessage();
       await this.play(boolean);
     } catch (error) {
-      console.error(error.message);
+      //console.error(error.message);
       // Handle the error or exit the game
     }
   }
@@ -34,19 +34,11 @@ export class Game {
         const nameOfWinner = this.determineWinner();
         ui.presentWinner(nameOfWinner);
       } catch (error) {
-        console.error(error.message);
+        //console.error(error.message);
         // Handle the error or provide an option to retry
       }
     }
   }
-
-  /*start() {
-    const ui = new Ui();
-    ui.greetingMessage();
-    const boolean = ui.playMessage();
-    this.play(boolean);
-
-  }*/
 
   createHumanPlayer() {
     this.players.push(new Player("Human player"));
@@ -55,22 +47,6 @@ export class Game {
   createComputerPlayer() {
     this.players.push(new Player("Computer player"));
   }
-
-  /*play(boolean) {
-    const ui = new Ui();
-    if (boolean === false) {
-      ui.exitMessage();
-    } else {
-      this.createHumanPlayer();
-      this.createComputerPlayer();
-      const humanChoice = ui.choiceInput();
-      this.setHumanChoice(humanChoice);
-      this.setComputerChoice();
-      const nameOfWinner = this.determineWinner()
-      ui.presentWinner(nameOfWinner);
-
-    }
-}*/
 
   setHumanChoice(choice) {
     this.players[0].setChoice(choice);
@@ -93,9 +69,5 @@ export class Game {
     } else {
       return "tie";
     }
-
   }
-
-
-
 }
