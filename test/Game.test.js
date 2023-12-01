@@ -66,5 +66,16 @@ describe('Game', () => {
     expect(mockPlayMessage).toHaveBeenCalled();
   });
 
-  
+  test('should display exit message if play takes boolean false', () => {
+    const mockPlayMessage = jest.fn();
+    Ui.mockImplementation(() => {
+      return {
+        playMessage: mockPlayMessage
+      };
+    });
+    const game = new Game();
+    game.play();
+
+    expect(mockPlayMessage).toHaveBeenCalled();
+  });
 });
