@@ -190,7 +190,6 @@ describe('Game', () => {
     Ui.mockImplementation(() => ({
       greetingMessage: jest.fn().mockRejectedValue(mockError),
       playMessage: jest.fn().mockResolvedValue(true),
-      // ... other methods
     }));
 
     const game = new Game();
@@ -206,12 +205,11 @@ describe('Game', () => {
     const mockError = new Error('Error in choiceInput');
     Ui.mockImplementation(() => ({
       choiceInput: jest.fn().mockRejectedValue(mockError),
-      // ... other methods
     }));
 
     const game = new Game();
-    game.createHumanPlayer(); // necessary setup for play method
-    game.createComputerPlayer(); // necessary setup for play method
+    game.createHumanPlayer();
+    game.createComputerPlayer();
 
     const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
 
