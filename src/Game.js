@@ -28,6 +28,7 @@ export class Game {
     } else {
       this.createHumanPlayer();
       this.createComputerPlayer();
+      ui.choiceInput();
     }
   }
 

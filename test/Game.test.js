@@ -11,18 +11,6 @@ describe('Game', () => {
     expect(Ui).toHaveBeenCalledTimes(1);
   });
 
-  /*test('should call greetingMessage on UI class', () => {
-    const mockGreetingMessage = jest.fn();
-    Ui.mockImplementation(() => {
-      return {
-        greetingMessage: mockGreetingMessage
-      };
-    });
-    const game = new Game();
-    game.start();
-
-    expect(mockGreetingMessage).toHaveBeenCalled();
-  });*/
 
   test('createHumanPlayer should create one player', () => {
     const game = new Game();
@@ -79,7 +67,15 @@ describe('Game', () => {
     expect(mockExitMessage).toHaveBeenCalled();
   });
 
+
   test('should call createHumanPlayer and createComputerPlayer if play takes boolean true', () => {
+
+    const mockChoiceInput = jest.fn();
+    Ui.mockImplementation(() => {
+      return {
+        choiceInput: mockChoiceInput
+      };
+    });
 
     const game = new Game();
 
@@ -90,21 +86,9 @@ describe('Game', () => {
     expect(game.createHumanPlayer).toHaveBeenCalled()
     expect(game.createComputerPlayer).toHaveBeenCalled()
     expect(game.players.length).toBe(2);
-  });
+    expect(mockChoiceInput).toHaveBeenCalled()
+  })
 
-  test('should call ui choice input', () => {
-
-    const mockChoiceInput = jest.fn();
-    Ui.mockImplementation(() => {
-      return {
-        chocieInput: mockChoiceInput
-      };
-    });
-    const game = new Game();
-    game.play(true);
-
-    expect(mockChoiceInput).toHaveBeenCalled();
-  });
 
 
 });
