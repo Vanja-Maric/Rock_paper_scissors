@@ -112,30 +112,44 @@ describe('Game', () => {
     expect(expectedChoices).toContain(game.players[1].choice);
   });
 
-  test('determine winner options calls choices class', () => {
-    // Define choices and expected winner
-    const humanChoice = 'rock';
-    const computerChoice = 'paper';
-    const expectedWinner = 'Computer player'; // Adjust based on your game logic
+  describe('Game', () => {
+    const testCases = [
+      ['rock', 'scissors', 'Human player'],
+      ['scissors', 'paper', 'Human player'],
+      ['paper', 'rock', 'Human player'],
+      ['scissors', 'rock', 'Computer player'],
+      ['paper', 'scissors', 'Computer player'],
+      ['rock', 'paper', 'Computer player'],
+      ['rock', 'rock', 'tie'],
+      ['scissors', 'scissors', 'tie'],
+      ['paper', 'paper', 'tie']
+    ];
 
-    const mockDetermineWinner = jest.fn().mockReturnValue(computerChoice);
-    Choices.mockImplementation(() => {
-      return {
-        determineWinner: mockDetermineWinner
-      };
+    test.each(testCases)('determineWinner (%s vs %s) should return %s', (humanChoice, computerChoice, expectedWinner) => {
+      const mockDetermineWinner = jest.fn().mockImplementation((choice1, choice2) => {
+        if (choice1 === choice2) return null; // tie
+        return choice1 === 'rock' && choice2 === 'scissors' ||
+          choice1 === 'scissors' && choice2 === 'paper' ||
+          choice1 === 'paper' && choice2 === 'rock'
+          ? choice1 : choice2;
+      });
+      Choices.mockImplementation(() => ({ determineWinner: mockDetermineWinner }));
+
+      const game = new Game();
+      game.createHumanPlayer();
+      game.createComputerPlayer();
+
+      game.players[0].setChoice(humanChoice);
+      game.players[1].setChoice(computerChoice);
+
+      const winner = game.determineWinner();
+
+      // Adjust the expected result for tie scenario
+      const expectedResult = expectedWinner === 'tie' ? expectedWinner : game.players.find(p => p.name === expectedWinner).name;
+
+      expect(mockDetermineWinner).toHaveBeenCalledWith(humanChoice, computerChoice);
+      expect(winner).toBe(expectedResult);
     });
 
-    const game = new Game();
-    game.createHumanPlayer();
-    game.createComputerPlayer();
-
-    game.players[0].setChoice(humanChoice);
-    game.players[1].setChoice(computerChoice);
-
-    const winner = game.determineWinner();
-
-    expect(mockDetermineWinner).toHaveBeenCalledWith(humanChoice, computerChoice);
-    expect(winner).toBe(expectedWinner);
   });
-
-});
+})
