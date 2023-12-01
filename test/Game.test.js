@@ -67,15 +67,15 @@ describe('Game', () => {
   });
 
   test('should display exit message if play takes boolean false', () => {
-    const mockPlayMessage = jest.fn();
+    const mockExitMessage = jest.fn();
     Ui.mockImplementation(() => {
       return {
-        playMessage: mockPlayMessage
+        exitMessage: mockExitMessage
       };
     });
     const game = new Game();
-    game.play();
+    game.play(false);
 
-    expect(mockPlayMessage).toHaveBeenCalled();
+    expect(mockExitMessage).toHaveBeenCalled();
   });
 });

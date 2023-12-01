@@ -21,6 +21,12 @@ export class Game {
     this.players.push(new Player("Computer player"));
   }
 
+  play(boolean) {
+    const ui = new Ui();
+    if (boolean === false) {
+      ui.exitMessage();
+    }
+  }
 
 
 }
