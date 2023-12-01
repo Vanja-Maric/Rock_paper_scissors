@@ -2,7 +2,7 @@ import { Game } from "../src/Game.js";
 import { Ui } from "../src/Ui.js";
 import { Player } from "../src/Player.js";
 
-jest.mock('../src/Ui.js'); 
+jest.mock('../src/Ui.js');
 describe('Game', () => {
   test('should create a new Ui instance in start function', () => {
     const game = new Game();
@@ -35,7 +35,7 @@ describe('Game', () => {
     game.createHumanPlayer();
     expect(game.players[0].name).toBe('Human player');
   });
- 
+
   test('createComputerPlayer should create second player', () => {
     const game = new Game();
     game.createComputerPlayer();
@@ -47,6 +47,19 @@ describe('Game', () => {
     const game = new Game();
     game.createComputerPlayer();
     expect(game.players[0].name).toBe('Computer player');
+  });
+
+  test('should call playMessage on UI class', () => {
+    const mockPlayMessage = jest.fn();
+    Ui.mockImplementation(() => {
+      return {
+        playMessage: mockPlayMessage
+      };
+    });
+    const game = new Game();
+    game.start();
+
+    expect(mockPlayMessage).toHaveBeenCalled();
   });
 
 });
