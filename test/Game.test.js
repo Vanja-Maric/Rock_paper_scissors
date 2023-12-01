@@ -92,5 +92,19 @@ describe('Game', () => {
     expect(game.players.length).toBe(2);
   });
 
-  
+  test('should call ui choice input', () => {
+
+    const mockChoiceInput = jest.fn();
+    Ui.mockImplementation(() => {
+      return {
+        chocieInput: mockChoiceInput
+      };
+    });
+    const game = new Game();
+    game.play(true);
+
+    expect(mockChoiceInput).toHaveBeenCalled();
+  });
+
+
 });
