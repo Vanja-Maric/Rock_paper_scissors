@@ -36,5 +36,9 @@ export class Game {
     this.players[0].setChoice(choice);
   }
 
-
+  setComputerChoice() {
+    const choices = ["rock", "paper", "scissors"];
+    const randomChoice = Math.floor(Math.random() * choices.length);
+    this.players[1].setChoice(choices[randomChoice]);
+  }
 }
