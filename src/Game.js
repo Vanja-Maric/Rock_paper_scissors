@@ -44,7 +44,7 @@ export class Game {
     this.players[1].setChoice(choices[randomChoice]);
   }
 
-  /*determineWinner() {
+  determineWinner() {
     const choices = new Choices();
     const winningChoice = choices.determineWinner(this.players[0].choice, this.players[1].choice);
     console.log("Human Player chose: " + this.players[0].choice + "and Computer player chose: "+ this.players[1].choice);
@@ -56,7 +56,7 @@ export class Game {
       return "tie";
     }
 
-  }*/
+  }
 
 
 
