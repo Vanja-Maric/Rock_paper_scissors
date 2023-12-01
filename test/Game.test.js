@@ -92,8 +92,8 @@ describe('Game', () => {
   test('should call setHumanChoice with choice', () => {
     const game = new Game();
     game.createHumanPlayer();
-    game.setHumanChoice('r');
-    expect(game.players[0].choice).toBe('r');
+    game.setHumanChoice('rock');
+    expect(game.players[0].choice).toBe('rock');
   })
 
 });
