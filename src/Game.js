@@ -31,7 +31,10 @@ export class Game {
       this.createHumanPlayer();
       this.createComputerPlayer();
       const humanChoice = ui.choiceInput();
-
+      this.setHumanChoice(humanChoice);
+      this.setComputerChoice();
+      const nameOfWinner = this.determineWinner()
+      ui.presentWinner(nameOfWinner);
 
     }
   }
