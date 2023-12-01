@@ -96,4 +96,18 @@ describe('Game', () => {
     expect(game.players[0].choice).toBe('rock');
   })
 
+
+  test('setComputerChoice should set a valid choice for the computer player', () => {
+    const game = new Game();
+    game.createHumanPlayer();
+    game.createComputerPlayer();
+    game.setComputerChoice();
+
+    // Define the expected choices
+    const expectedChoices = ["rock", "paper", "scissors"];
+
+    // Ensure the choice is one of the expected choices
+    expect(expectedChoices).toContain(game.players[1].choice);
+  });
+
 });

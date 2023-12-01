@@ -35,4 +35,6 @@ export class Game {
   setHumanChoice(choice) {
     this.players[0].setChoice(choice);
   }
+
+
 }
