@@ -78,4 +78,14 @@ describe('Game', () => {
 
     expect(mockExitMessage).toHaveBeenCalled();
   });
+
+  test('should call createHumanPlayer and createComputerPlayer if play takes boolean true', () => {
+
+    const game = new Game();
+    game.play(true);
+    expect(game.createHumanPlayer).toHaveBeenCalled()
+    expect(game.createComputerPlayer).toHaveBeenCalled()
+    expect(game.players.length).toBe(2);
+
+  });
 });
