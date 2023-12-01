@@ -53,17 +53,20 @@ describe('Ui class', () => {
     expect(() => ui.throwErrorIfWrongChoice("t")).toThrow('Wrong choice. Please choose again.');
   });
 
+
   test('inputChoice should return choice if valid', () => {
     const mockInput = "r";
     mockInterface.question.mockImplementation((prompt, callback) => callback(mockInput));
     console.log = jest.fn();
 
-    return ui.choiceInput().then(() => {
+    return ui.choiceInput().then(choice => { 
+      expect(choice).toBe(mockInput);
       expect(console.log).toHaveBeenCalledWith("r");
-  expect(mockInterface.question).toHaveBeenCalledWith("Enter 'r' for rock, 'p' for paper, and 's' for scissors. \n Please enter your choice: ", expect.any(Function));
+      expect(mockInterface.question).toHaveBeenCalledWith("Enter 'r' for rock, 'p' for paper, and 's' for scissors. \n Please enter your choice: ", expect.any(Function));
       expect(mockInterface.close).toHaveBeenCalled();
     });
   })
+
 
   test('presentWinner announces the correct winner', () => {
     const winnerName = "Daniel";

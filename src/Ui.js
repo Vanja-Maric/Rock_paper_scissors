@@ -32,6 +32,7 @@ export class Ui {
     const choice = await this.takeInInputFromTerminal("Enter 'r' for rock, 'p' for paper, and 's' for scissors. \n Please enter your choice: ");
     this.throwErrorIfWrongChoice(choice);
     console.log(choice);
+    
   }
 
   throwErrorIfWrongChoice(choice) {
