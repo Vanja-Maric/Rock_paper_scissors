@@ -85,11 +85,12 @@ describe('Game', () => {
 
     jest.spyOn(game, 'createHumanPlayer');
     jest.spyOn(game, 'createComputerPlayer');
-    
+
     game.play(true);
     expect(game.createHumanPlayer).toHaveBeenCalled()
     expect(game.createComputerPlayer).toHaveBeenCalled()
     expect(game.players.length).toBe(2);
-
   });
+
+  
 });

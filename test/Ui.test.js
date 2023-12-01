@@ -60,7 +60,7 @@ describe('Ui class', () => {
 
     return ui.choiceInput().then(() => {
       expect(console.log).toHaveBeenCalledWith("r");
-      expect(mockInterface.question).toHaveBeenCalledWith("Please enter your choice: ", expect.any(Function));
+  expect(mockInterface.question).toHaveBeenCalledWith("Enter 'r' for rock, 'p' for paper, and 's' for scissors. \n Please enter your choice: ", expect.any(Function));
       expect(mockInterface.close).toHaveBeenCalled();
     });
   })
