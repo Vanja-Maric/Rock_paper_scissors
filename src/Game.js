@@ -8,9 +8,9 @@ export class Game {
   }
 
   start() {
-   const ui = new Ui();
+    const ui = new Ui();
     ui.greetingMessage();
-    ui.playMessage()
+    ui.playMessage();
   }
 
   createHumanPlayer() {
@@ -20,5 +20,7 @@ export class Game {
   createComputerPlayer() {
     this.players.push(new Player("Computer player"));
   }
+
+
 
 }
