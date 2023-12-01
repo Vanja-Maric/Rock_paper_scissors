@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701344566039" clover="3.2.0">
-  <project timestamp="1701344566039" name="All files">
-    <metrics statements="41" coveredstatements="41" conditionals="17" coveredconditionals="17" methods="20" coveredmethods="20" elements="78" coveredelements="78" complexity="0" loc="41" ncloc="41" packages="1" files="4" classes="4"/>
-    <file name="Choices.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Choices.js">
+<coverage generated="1701420517604" clover="3.2.0">
+  <project timestamp="1701420517604" name="All files">
+    <metrics statements="42" coveredstatements="42" conditionals="17" coveredconditionals="17" methods="20" coveredmethods="20" elements="79" coveredelements="79" complexity="0" loc="42" ncloc="42" packages="1" files="4" classes="4"/>
+    <file name="Choices.js" path="C:\Users\tease\OneDrive\Dokument\Svenskt Universitet\Linneaus University\1DV609 - Testing\TDD-A1pt2\Rock_paper_scissors\src\Choices.js">
       <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <line num="4" count="12" type="stmt"/>
       <line num="8" count="9" type="cond" truecount="2" falsecount="0"/>
@@ -14,21 +14,22 @@
       <line num="19" count="2" type="stmt"/>
       <line num="21" count="1" type="stmt"/>
     </file>
-    <file name="Game.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Game.js">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+    <file name="Game.js" path="C:\Users\tease\OneDrive\Dokument\Svenskt Universitet\Linneaus University\1DV609 - Testing\TDD-A1pt2\Rock_paper_scissors\src\Game.js">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <line num="5" count="6" type="stmt"/>
       <line num="11" count="2" type="stmt"/>
       <line num="12" count="2" type="stmt"/>
-      <line num="16" count="2" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
     </file>
-    <file name="Player.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Player.js">
+    <file name="Player.js" path="C:\Users\tease\OneDrive\Dokument\Svenskt Universitet\Linneaus University\1DV609 - Testing\TDD-A1pt2\Rock_paper_scissors\src\Player.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="4" count="8" type="stmt"/>
       <line num="5" count="8" type="stmt"/>
       <line num="9" count="2" type="stmt"/>
     </file>
-    <file name="Ui.js" path="C:\Users\tnjma\1dv609\Rock_paper_scissors\src\Ui.js">
+    <file name="Ui.js" path="C:\Users\tease\OneDrive\Dokument\Svenskt Universitet\Linneaus University\1DV609 - Testing\TDD-A1pt2\Rock_paper_scissors\src\Ui.js">
       <metrics statements="24" coveredstatements="24" conditionals="11" coveredconditionals="11" methods="12" coveredmethods="12"/>
       <line num="5" count="6" type="stmt"/>
       <line num="10" count="6" type="stmt"/>
