@@ -41,4 +41,6 @@ export class Game {
     const randomChoice = Math.floor(Math.random() * choices.length);
     this.players[1].setChoice(choices[randomChoice]);
   }
+
+  
 }

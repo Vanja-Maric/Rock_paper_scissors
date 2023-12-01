@@ -1,6 +1,8 @@
+import { Choices } from "../src/Choices.js";
 import { Game } from "../src/Game.js";
-import { Ui } from "../src/Ui.js";
 import { Player } from "../src/Player.js";
+import { Ui } from "../src/Ui.js";
+
 
 jest.mock('../src/Ui.js');
 describe('Game', () => {
@@ -109,5 +111,19 @@ describe('Game', () => {
     // Ensure the choice is one of the expected choices
     expect(expectedChoices).toContain(game.players[1].choice);
   });
+
+  test('determine winner options calls choices class', () => {
+    jest.mock('../src/Choices.js');
+    const mockDetermineWinner = jest.fn();
+    Choices.mockImplementation(() => {
+      return {
+        determineWinner: mockDetermineWinner
+      };
+    });
+    const game = new Game();
+    game.determineWinner();
+    expect(mockDetermineWinner).toHaveBeenCalled();
+
+  })
 
 });
