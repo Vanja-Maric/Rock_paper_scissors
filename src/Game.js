@@ -13,6 +13,7 @@ export class Game {
     const ui = new Ui();
     ui.greetingMessage();
     const boolean = ui.playMessage();
+    this.play(boolean);
 
   }
 

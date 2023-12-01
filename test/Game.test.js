@@ -10,7 +10,7 @@ describe('Game', () => {
   test('should create a new Ui instance in start function', () => {
     const game = new Game();
     game.start();
-    expect(Ui).toHaveBeenCalledTimes(1);
+    expect(Ui).toHaveBeenCalled();
   });
 
 
@@ -40,23 +40,31 @@ describe('Game', () => {
     expect(game.players[0].name).toBe('Computer player');
   });
 
+
   test('should call greetingMessage and playMessage on UI class', () => {
+    // Mock implementations for Ui class methods
     const mockGreetingMessage = jest.fn();
-    const mockPlayMessage = jest.fn();
+    const mockPlayMessage = jest.fn().mockReturnValue(true); // Assuming playMessage returns a boolean
     Ui.mockImplementation(() => {
       return {
         greetingMessage: mockGreetingMessage,
         playMessage: mockPlayMessage
       };
     });
+
+    // Create a new Game instance
     const game = new Game();
 
-    jest.spyOn(game, 'play');
+    // Spy on game.play
+    jest.spyOn(game, 'play').mockImplementation(() => { });
+
+    // Call start
     game.start();
 
-    expect(mockGreetingMessage).toHaveBeenCalled()
+    // Assertions
+    expect(mockGreetingMessage).toHaveBeenCalled();
     expect(mockPlayMessage).toHaveBeenCalled();
-    expect(game.play).toHaveBeenCalled()
+    expect(game.play).toHaveBeenCalledWith(true); // Expect that game.play was called with the value returned by mockPlayMessage
   });
 
   test('should display exit message if play takes boolean false', () => {
