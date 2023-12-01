@@ -33,8 +33,7 @@ export class Game {
         const nameOfWinner = this.determineWinner();
         ui.presentWinner(nameOfWinner);
       } catch (error) {
-        //console.error(error.message);
-        // Handle the error or provide an option to retry
+        console.error(error.message);
       }
     }
   }
