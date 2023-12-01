@@ -15,8 +15,7 @@ export class Game {
       const boolean = await ui.playMessage();
       await this.play(boolean);
     } catch (error) {
-      //console.error(error.message);
-      // Handle the error or exit the game
+      console.error(error.message);
     }
   }
 
