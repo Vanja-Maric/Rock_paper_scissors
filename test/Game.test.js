@@ -202,7 +202,7 @@ describe('Game', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  /*test('play method should handle errors correctly', async () => {
+  test('play method should handle errors correctly', async () => {
     const mockError = new Error('Error in choiceInput');
     Ui.mockImplementation(() => ({
       choiceInput: jest.fn().mockRejectedValue(mockError),
@@ -219,5 +219,5 @@ describe('Game', () => {
 
     expect(consoleErrorSpy).toHaveBeenCalledWith(mockError.message);
     consoleErrorSpy.mockRestore();
-  });*/
+  });
 })
