@@ -14,8 +14,8 @@ describe('Player', () => {
 
 describe('Choice should allow player to set choice', () => {
   describe.each([
-    ['Rock'],
-    ['Paper']
+    ['rock'],
+    ['paper']
   ])('with choice %s', (choice) => {
     test('should set a given choice', () => {
       const player = new Player("Daniel");
