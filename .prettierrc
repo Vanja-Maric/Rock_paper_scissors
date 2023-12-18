@@ -6,5 +6,5 @@
   //       "semi": false,
   //       "singleQuote": true,
   //       "quoteProps": "consistent",
-           "quoteProps": "preserve",
+     //      "quoteProps": "preserve",
 }

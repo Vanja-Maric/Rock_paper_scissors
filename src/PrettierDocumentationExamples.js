@@ -67,5 +67,6 @@ let doubleQuotesExample = "I'm double quoted, but not yet formatted";
 const obj = {
   key: "value",
   numeric: 42,
-  "key-with-dashes": true,
+  'key-with-dashes': true,
+  "key with spaces": null,
 };
