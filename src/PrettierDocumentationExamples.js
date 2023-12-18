@@ -69,3 +69,9 @@ const obj ={"key": "value",
   'key-with-dashes': true,
   "key with spaces": null,
 };
+
+// BRACKET SPACING
+
+const object = { foo: 'bar', baz: 'qux' 
+};
+
