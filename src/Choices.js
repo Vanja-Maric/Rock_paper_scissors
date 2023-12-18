@@ -4,7 +4,7 @@ export class Choices {
     this.availableChoices = ["rock", "paper", "scissors"];
   }
 
-  determineWinner(thisIsTheArgumentThatWillRepresentTheFirstOption, thisIsTheArgumentThatWillRepresentTheSecondOption) {
+  determineWinner(thisIsTheArgumentThatWillRepresentTheFirstOption, thisIsTheArgumentThatWillRepresentTheSecondOption){
     if (thisIsTheArgumentThatWillRepresentTheFirstOption === thisIsTheArgumentThatWillRepresentTheSecondOption) {
       return "tie";
     }
@@ -15,11 +15,10 @@ export class Choices {
     };
     if (winningMap[thisIsTheArgumentThatWillRepresentTheFirstOption] === thisIsTheArgumentThatWillRepresentTheSecondOption) {
       return thisIsTheArgumentThatWillRepresentTheFirstOption;
-    } else if (winningMap[thisIsTheArgumentThatWillRepresentTheSecondOption] === thisIsTheArgumentThatWillRepresentTheFirstOption) {
+    }else if (winningMap[thisIsTheArgumentThatWillRepresentTheSecondOption] === thisIsTheArgumentThatWillRepresentTheFirstOption) {
       return thisIsTheArgumentThatWillRepresentTheSecondOption;
     } else {
-      throw new Error('Invalid option');
-    }
+      throw new Error('Invalid option');}
   }
 
   

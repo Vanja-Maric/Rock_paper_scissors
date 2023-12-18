@@ -1,7 +1,7 @@
 import readline from 'readline';
 export class Ui {
 
-  takeInInputFromTerminal(prompt) {
+  takeInInputFromTerminal(prompt){
     const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
@@ -28,13 +28,10 @@ export class Ui {
     throw new Error('Username cannot be empty.');
   }
 
-  async choiceInput() {
-    const choice = await this.takeInInputFromTerminal("Enter 'rock' for rock, 'paper' for paper, and 'scissors' for scissors. \n Please enter your choice: ");
+  async choiceInput(){const choice = await this.takeInInputFromTerminal("Enter 'rock' for rock, 'paper' for paper, and 'scissors' for scissors. \n Please enter your choice: ");
     this.throwErrorIfWrongChoice(choice);
     console.log(choice);
-    return choice;
-
-  }
+    return choice;}
 
   throwErrorIfWrongChoice(choice) {
     if (choice !== "rock" && choice !== "paper" && choice !== "scissors") {

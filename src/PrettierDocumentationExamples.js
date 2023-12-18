@@ -64,8 +64,7 @@ let singleQuotesExample =
 let doubleQuotesExample = "I'm double quoted, but not yet formatted";
 
 // Quote props
-const obj = {
-  "key": "value",
+const obj ={"key": "value",
   numeric: 42,
   'key-with-dashes': true,
   "key with spaces": null,
