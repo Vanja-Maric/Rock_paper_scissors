@@ -56,14 +56,28 @@ export class Ui {
   checkPlay(input) {
     if (input === "p") {
      return true;
-    } else if (input === "q") {
-     return false;
-    } else {
-     throw new Error('Wrong choice. Please choose again.');
+    } else if (input === "q") {return false;
+    } 
+    else {
+
+
+
+
+     
+     
+      throw new Error('Wrong choice. Please choose again.');
     }
+
+
   }
 
-  exitMessage() {
+
+
+
+exitMessage() {
+    
+    
+    
     console.log("Exiting...")
   }
 }

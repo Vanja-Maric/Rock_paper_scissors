@@ -1,4 +1,7 @@
 import { Game } from './Game.js';
 
-const newGame = new Game();
-newGame.start();
+
+
+
+
+const newGame = new Game();newGame.start();
