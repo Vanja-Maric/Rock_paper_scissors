@@ -10,4 +10,5 @@
   //       "arrowParens": "avoid",
   //       "rangeStart": 50,
   //        "rangeEnd": 70,
+  //       "requirePragma": true,
 }

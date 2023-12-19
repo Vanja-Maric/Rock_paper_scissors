@@ -1,3 +1,6 @@
+/**
+ * @prettier
+ */
 import { Choices } from './Choices.js';
 import { Player } from './Player.js';
 import { Ui } from './Ui.js';

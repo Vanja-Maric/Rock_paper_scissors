@@ -1,3 +1,6 @@
+/**
+ * @prettier
+ */
 import { Choices } from '../src/Choices'
 
 describe("Choices", () => {
