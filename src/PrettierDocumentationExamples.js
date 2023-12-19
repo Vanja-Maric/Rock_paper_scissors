@@ -1,19 +1,15 @@
-// Compare with: hhttps://github.com/prettier/prettier/blob/main/commands.md#softline
+// Compare with: https://github.com/prettier/prettier/blob/main/commands.md#softline
 
 const oneLineArray = [
   1,
   "foo",
-  {
-    bar: 2,
-  },
+  {bar: 2,},
 ];
 
 const oneLineArrayWithVeryVeryVeryLongLongName = [
   1,
   "foo",
-  {
-    bar: 2,
-  },
+  {bar: 2,},
 ];
 
 const multiLineArrayWithHardBreak = [
