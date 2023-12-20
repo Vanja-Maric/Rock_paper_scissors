@@ -4,6 +4,14 @@ export class Choices {
     this.availableChoices = ["rock", "paper", "scissors"];
   }
 
+  /**
+          *
+   *
+   * @param {*} thisIsTheArgumentThatWillRepresentTheFirstOption
+              * @param {*} thisIsTheArgumentThatWillRepresentTheSecondOption
+   * @return {*}
+        * @memberof Choices
+   */
   determineWinner(thisIsTheArgumentThatWillRepresentTheFirstOption, thisIsTheArgumentThatWillRepresentTheSecondOption){
     if (thisIsTheArgumentThatWillRepresentTheFirstOption === thisIsTheArgumentThatWillRepresentTheSecondOption) {
       return "tie";
@@ -21,6 +29,6 @@ export class Choices {
       throw new Error('Invalid option');}
   }
 
-  
+
 
 }
