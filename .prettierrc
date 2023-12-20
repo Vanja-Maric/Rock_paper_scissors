@@ -5,7 +5,7 @@
   //       "semi": false,
   //       "singleQuote": true,
   //       "quoteProps": "preserve",
-  //       trailingComma: "none",
+  //       "trailingComma": "none",
   //       "bracketSpacing": false,
   //       "arrowParens": "avoid",
   //       "rangeStart": 50,
