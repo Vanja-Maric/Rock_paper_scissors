@@ -1,1 +1,1 @@
-                      const newGame = new Game();
+                      const newGame = "newGame";
