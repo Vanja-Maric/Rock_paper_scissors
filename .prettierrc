@@ -11,4 +11,5 @@
   //       "rangeStart": 50,
   //        "rangeEnd": 70,
   //       "requirePragma": true,
+  //       "insertPragma": true
 }
